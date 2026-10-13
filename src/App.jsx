@@ -32,7 +32,7 @@ function App() {
     [palette, setPalette] = useState(false),
     [query, setQuery] = useState(""),
     [skill, setSkill] = useState("C++");
-  const nav = ["About", "Skills", "Work", "Journey", "Contact"];
+  const nav = ["About", "Education", "Skills", "Learning", "Profiles", "Contact"];
   useEffect(() => {
     document.documentElement.classList.add("reveal-ready");
     const reveals = document.querySelectorAll("main section, .experiment-card, .skill-grid article, .timeline article, .contact-terminal");
@@ -47,9 +47,10 @@ function App() {
     const ids = [
       "top",
       "about",
+      "education",
       "skills",
-      "work",
-      "journey",
+      "learning",
+      "profiles",
       "contact",
     ];
     const observer = new IntersectionObserver(
@@ -154,13 +155,13 @@ function App() {
                 <TypeName />
               </em>
             </h1>
-            <p className="intro">I turn curiosity into code — exploring ideas, solving problems, and building useful things one commit at a time.</p>
+            <p className="intro">I’m an Information Science and Engineering student interested in programming, problem solving, and learning how software is built.</p>
             <div className="actions">
-              <Magnetic className="button light" href="#work">
-                Explore my work <ArrowRight size={17} />
+              <Magnetic className="button light" href="#education">
+                About my studies <ArrowRight size={17} />
               </Magnetic>
               <Magnetic className="button" href="#skills">
-                Explore my stack <Code2 size={16} />
+                View skills <Code2 size={16} />
               </Magnetic>
             </div>
             <div className="socials">
@@ -175,17 +176,15 @@ function App() {
               <span />
               <span />
               <span />
-              <code>joyson.java</code>
+              <code>profile.js</code>
             </div>
             <pre>
-              <span className="code-muted">01</span> <span className="code-purple">const</span> joyson = {"{"}<br />
-              <span className="code-muted">02</span>   role: <span className="code-cyan">"engineer in progress"</span>,<br />
-              <span className="code-muted">03</span>   toolkit: [<span className="code-cyan">"Java"</span>, <span className="code-cyan">"C++"</span>, <span className="code-cyan">"Python"</span>],<br />
-              <span className="code-muted">04</span>   currently: <span className="code-cyan">"building + learning"</span>,<br />
-              <span className="code-muted">05</span>   curiosity: <span className="code-purple">Infinity</span>,<br />
-              <span className="code-muted">06</span>   make: () =&gt; <span className="code-cyan">"something useful"</span><br />
-              <span className="code-muted">07</span> {"}"};<br />
-              <span className="code-muted">08</span> <span className="code-purple">while</span> (joyson.curiosity) joyson.make();<span className="terminal-cursor">▍</span>
+              <span className="code-muted">01</span> <span className="code-purple">const</span> student = {"{"}<br />
+              <span className="code-muted">02</span>   field: <span className="code-cyan">"Information Science"</span>,<br />
+              <span className="code-muted">03</span>   languages: [<span className="code-cyan">"C++"</span>, <span className="code-cyan">"Java"</span>, <span className="code-cyan">"Python"</span>],<br />
+              <span className="code-muted">04</span>   interests: [<span className="code-cyan">"DSA"</span>, <span className="code-cyan">"software"</span>],<br />
+              <span className="code-muted">05</span>   status: <span className="code-cyan">"learning"</span><br />
+              <span className="code-muted">06</span> {"}"};<span className="terminal-cursor">▍</span>
             </pre>
             <p>
               <i /> AVAILABLE FOR OPPORTUNITIES
@@ -205,29 +204,16 @@ function App() {
             <p className="body">
               I’m a third-year Information Science and Engineering student at
               MITE, Mangalore, pursuing a Bachelor of Engineering under VTU.
-              With a CGPA of 9.55, I enjoy working through data structures,
-              object-oriented programming, and the details that make software
-              reliable.
+              I enjoy studying programming fundamentals and working through data structures, object-oriented programming, and problem solving.
             </p>
             <p className="body muted">
-              I build with Java, C++, and Python, use Git and GitHub to work
-              with care, and am currently exploring full-stack development,
-              MySQL, and MongoDB.
+              My current programming toolkit includes C, C++, Java, and Python. I’m continuing to build my skills through coursework and practice.
             </p>
           </div>
-          <div className="stats">
-            {[
-              ["9.55", "CGPA"],
-              ["3rd", "Year"],
-              ["4+", "Programming languages"],
-              ["∞", "Things to learn"],
-            ].map((x) => (
-              <div key={x[1]}>
-                <strong>{x[0]}</strong>
-                <span>{x[1]}</span>
-              </div>
-            ))}
-          </div>
+        </section>
+        <section id="education" className="wrap education-section">
+          <div><p className="eyebrow">02 — Education</p><h2>My academic<br/><em>background.</em></h2></div>
+          <article className="education-card"><span className="education-mark"><Code2 size={22}/></span><div><p className="eyebrow">Bachelor of Engineering · 2024 — Present</p><h3>Information Science &amp; Engineering</h3><p>MITE · Mangalore, Karnataka · VTU</p></div><div className="cgpa"><strong>9.55</strong><span>CGPA</span></div></article>
         </section>
         <section id="skills" className="wrap">
           <div>
@@ -280,52 +266,21 @@ function App() {
             </aside>
           </div>
         </section>
-        <section id="work" className="work">
-          <div className="wrap">
-            <div>
-              <p className="eyebrow">03 — Selected work</p>
-              <div className="split-title">
-                <h2>Small experiments.<br /><em>Big curiosity.</em></h2>
-                <p>Learning by making, breaking, and improving.</p>
-              </div>
-            </div>
-            <div className="experiment-grid">
-              {[["01", "Problem solving", "Turning tricky problems into smaller, understandable steps.", "C++ · DSA"], ["02", "Learning in public", "Exploring new tools and keeping a steady record of what I build.", "Git · GitHub"], ["03", "Web, next", "Growing from fundamentals into complete, useful web experiences.", "JavaScript · Databases"]].map(([n, title, desc, tags]) => <article className="experiment-card" key={n}><span>{n} <ArrowUpRight size={18}/></span><Code2 size={27}/><h3>{title}</h3><p>{desc}</p><code>{tags}</code></article>)}
-            </div>
-          </div>
-        </section>
-        <section id="journey" className="wrap journey">
+        <section id="learning" className="wrap learning-section">
           <div>
-            <p className="eyebrow">04 — Journey</p>
+            <p className="eyebrow">04 — Currently learning</p>
             <h2>
-              Always
+              Areas I’m
               <br />
-              <em>in progress.</em>
+              <em>exploring.</em>
             </h2>
           </div>
-          <div className="timeline">
-            <article>
-              <span>2024 — Present</span>
-              <h3>Bachelor of Engineering</h3>
-              <p>Information Science & Engineering · MITE, Mangalore</p>
-              <small>3rd Year · CGPA 9.55</small>
-            </article>
-            <article>
-              <span>Current project</span>
-              <h3>Building stronger fundamentals</h3>
-              <p>Practicing data structures, object-oriented design, and problem solving.</p>
-            </article>
-            <article>
-              <span>Now learning</span>
-              <h3>Expanding the stack</h3>
-              <p>Full-Stack Web Development, MySQL, and MongoDB.</p>
-            </article>
-          </div>
+          <div className="learning-list">{["Full-Stack Web Development", "MySQL", "MongoDB"].map((item, i) => <article key={item}><span>0{i+1}</span><h3>{item}</h3><small>Currently learning</small></article>)}</div>
         </section>
         <section className="activity">
-          <div className="wrap">
+          <div className="wrap" id="profiles">
             <div>
-              <p className="eyebrow">05 — Developer activity</p>
+              <p className="eyebrow">05 — Profiles</p>
               <h2>
                 Where I<br />
                 <em>build.</em>
